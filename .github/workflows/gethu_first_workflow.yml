@@ -7,5 +7,7 @@ jobs:
       - name: 'Welcome Message'
         run: Write-Host "Welcome to my Github"
       - name: 'Farewell Message'
-        run: Write-Host "Thanks for coming"
+        run: |
+            Write-Host "Thanks for coming"
+            Write-Host "Take Care Bye !!!"
      
