@@ -23,5 +23,5 @@ jobs:
               run: |
                 echo "My first line"
                 echo "My Second Line"
-                echo "${{ toJson(github) }}"
+                echo "${{ toJson(github.event.organization.login) }}"
             
