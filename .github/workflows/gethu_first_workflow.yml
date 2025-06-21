@@ -1,0 +1,11 @@
+name: 'gethu_first_workflow'
+on: workflow_dispatch
+jobs: 
+  first_job: 
+    runs-on: windows-latest
+    steps: 
+      - name: 'Welcome Message'
+        run: "Write-Host Welcome to my Github"
+      - name: 'Farewell Message'
+        run: Write-Host "Thanks for coming"
+     
