@@ -18,7 +18,12 @@ jobs:
             - name: Welcome_Message
               run: echo "How are you team?"
             - name: invoke_action
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
+            - name: Install Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13' 
+            - run: python my_script.py
             - name: Multi_Liner_script              
               run: |
                 echo "My first line"
