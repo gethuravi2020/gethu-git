@@ -5,7 +5,7 @@ jobs:
     runs-on: windows-latest
     steps: 
       - name: 'Welcome Message'
-        run: "Write-Host Welcome to my Github"
+        run: Write-Host "Welcome to my Github"
       - name: 'Farewell Message'
         run: Write-Host "Thanks for coming"
      
