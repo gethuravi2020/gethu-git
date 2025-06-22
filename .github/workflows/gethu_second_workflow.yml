@@ -1,11 +1,12 @@
 name: gethu_second_workflow
 on: 
   workflow_dispatch:
-  pull_request:
-    branches: 
-      - main
-      - dev/**
-      - sample/**
+  push:
+  # pull_request:
+  #   branches: 
+  #     - main
+  #     - dev/**
+  #     - sample/**
 
 jobs: 
     first_job: 
@@ -31,10 +32,13 @@ jobs:
               with:
                 python-version: '3.13' 
             - name: Check Python Version 
-              run: python --version
+              run: python --version 
             - name: Multi_Liner_script              
               run: |
                 echo "My first line"
                 echo "My Second Line"
-                echo "${{ toJson(github.event.organization.login) }}"
-            
+                echo "${{ toJson(github.event.organization.login) }}" >> gethu.txt
+            - name: Upload Artifacts
+              uses: actions/upload-artifact@v4
+              with: 
+                path: gethu.txt
