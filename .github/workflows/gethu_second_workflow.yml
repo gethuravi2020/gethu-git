@@ -5,7 +5,7 @@ on:
     branches: 
       - main
       - dev/**
-      - sample
+      - sample/**
 
 jobs: 
     first_job: 
