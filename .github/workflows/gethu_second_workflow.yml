@@ -7,7 +7,9 @@ on:
   #     - main
   #     - dev/**
   #     - sample/**
-
+env: 
+  MONGO_DB_USER: "PodaVennai"
+  MONGO_DB_PASSWORD: "SollaMudiyathu"
 jobs: 
     first_job: 
         runs-on: windows-latest
@@ -35,8 +37,8 @@ jobs:
               run: python --version 
             - name: Multi_Liner_script              
               run: |
-                echo "My first line"
-                echo "My Second Line"
+                echo $(MONGO_DB_USER)
+                echo $(MONGO_DB_PASSWORD)
                 echo "${{ toJson(github.event.organization.login) }}" >> gethu.txt
             - name: Upload Artifacts
               uses: actions/upload-artifact@v4
