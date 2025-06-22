@@ -10,8 +10,12 @@ on:
 env: 
   MONGO_DB_USER: "PodaVennai"
   MONGO_DB_PASSWORD: "SollaMudiyathu"
+  ENV_SECRET: ${{ secrets.ENV_SECRET }}
 jobs: 
     first_job: 
+        environment: Dev
+        env: 
+          MONGO_DB_PASSWORD1: "pinchukum unakum"
         runs-on: windows-latest
         steps:
             - name: Welcome_Message
@@ -39,6 +43,9 @@ jobs:
               run: |
                 echo $MONGO_DB_USER
                 echo $MONGO_DB_PASSWORD
+                echo $MONGO_DB_PASSWORD1
+                echo the env secret - $ENV_SECRET
+                echo $MONGO_DB_PASSWORD1
                 echo "${{ toJson(github.event.organization.login) }}" >> gethu.txt
             - name: Upload Artifacts
               uses: actions/upload-artifact@v4
