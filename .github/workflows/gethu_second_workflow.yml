@@ -10,12 +10,13 @@ on:
 env: 
   MONGO_DB_USER: "PodaVennai"
   MONGO_DB_PASSWORD: "SollaMudiyathu"
-  ENV_SECRET: ${{ secrets.ENV_SECRET }}
+  
 jobs: 
     first_job: 
         environment: Dev
         env: 
           MONGO_DB_PASSWORD1: "pinchukum unakum"
+          ENV_SECRET: ${{ secrets.ENV_SECRET }}
         runs-on: windows-latest
         steps:
             - name: Welcome_Message
